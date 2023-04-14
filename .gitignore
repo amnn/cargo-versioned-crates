@@ -1,0 +1,9 @@
+# OSX
+.DS_Store
+
+# Rust build directory
+**/target
+.pre-commit*
+
+# Move build directory
+build
