@@ -8,6 +8,7 @@ exclude = [
 
 members = [
     "crates/layer-0",
+    "crates/layer-1",
     "crates/layer-1-0",
     "crates/layer-1-1",
     "crates/layer-2",

@@ -1,9 +1,6 @@
-macro_rules! test {
-    ($fn:ident) => { println!("{} = {:?}", stringify!($fn), $fn::$fn()) }
-}
-
 fn main() {
-    test!(layer_0);
-    test!(layer_1_0);
-    test!(layer_1_1);
+    println!("layer_0   = {:?}", layer_0::layer_0());
+    println!("ext_1     = {:?}", layer_1::ext_1());
+    println!("layer_1_0 = {:?}", layer_1::layer_1_0());
+    println!("layer_1_1 = {:?}", layer_1::layer_1_1());
 }
