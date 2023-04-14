@@ -1,0 +1,8 @@
+[package]
+name = "layer-1-0"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ext-0.workspace = true
+layer-0.path = "../layer-0"

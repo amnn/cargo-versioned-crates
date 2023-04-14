@@ -3,13 +3,42 @@
 version = 3
 
 [[package]]
+name = "ext-0"
+version = "0.1.0"
+
+[[package]]
+name = "ext-1"
+version = "0.1.0"
+dependencies = [
+ "ext-0",
+]
+
+[[package]]
 name = "layer-0"
 version = "0.1.0"
 
 [[package]]
-name = "layer-1"
+name = "layer-1-0"
 version = "0.1.0"
+dependencies = [
+ "ext-0",
+ "layer-0",
+]
+
+[[package]]
+name = "layer-1-1"
+version = "0.1.0"
+dependencies = [
+ "ext-0",
+ "ext-1",
+ "layer-0",
+]
 
 [[package]]
 name = "layer-2"
 version = "0.1.0"
+dependencies = [
+ "layer-0",
+ "layer-1-0",
+ "layer-1-1",
+]

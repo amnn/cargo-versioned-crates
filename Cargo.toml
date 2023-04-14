@@ -3,11 +3,13 @@ resolver = "2"
 
 exclude = [
     "external/ext-0",
+    "external/ext-1",
 ]
 
 members = [
     "crates/layer-0",
-    "crates/layer-1",
+    "crates/layer-1-0",
+    "crates/layer-1-1",
     "crates/layer-2",
 ]
 
@@ -15,4 +17,5 @@ members = [
 version = "0.32.0"
 
 [workspace.dependencies]
-external = { path = "external/ext-0" }
+ext-0 = { path = "external/ext-0" }
+ext-1 = { path = "external/ext-1" }
