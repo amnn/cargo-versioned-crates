@@ -3,10 +3,7 @@ name = "layer-1"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 ext-0.workspace = true
-ext-1.workspace = true
-layer-1-0.path = "../layer-1-0"
-layer-1-1.path = "../layer-1-1"
+layer-0.path = "../layer-0"
+layer-1-v1 = { path = "../layer-1-latest", package = "layer-1-latest" }

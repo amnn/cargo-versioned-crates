@@ -9,8 +9,9 @@ exclude = [
 members = [
     "crates/layer-0",
     "crates/layer-1",
-    "crates/layer-1-0",
-    "crates/layer-1-1",
+    "crates/layer-1-latest",
+    "crates/layer-1-0-latest",
+    "crates/layer-1-1-latest",
     "crates/layer-2",
 ]
 
@@ -19,4 +20,3 @@ version = "0.32.0"
 
 [workspace.dependencies]
 ext-0 = { path = "external/ext-0" }
-ext-1 = { path = "external/ext-1" }
