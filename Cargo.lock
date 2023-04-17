@@ -7,7 +7,7 @@ name = "ext-0"
 version = "0.1.0"
 
 [[package]]
-name = "ext-1"
+name = "ext-1-latest"
 version = "0.1.0"
 dependencies = [
  "ext-0",
@@ -39,7 +39,7 @@ name = "layer-1-1-latest"
 version = "0.1.0"
 dependencies = [
  "ext-0",
- "ext-1",
+ "ext-1-latest",
  "layer-0",
 ]
 
@@ -48,7 +48,7 @@ name = "layer-1-latest"
 version = "0.1.0"
 dependencies = [
  "ext-0",
- "ext-1",
+ "ext-1-latest",
  "layer-1-0-latest",
  "layer-1-1-latest",
 ]
