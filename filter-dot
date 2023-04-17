@@ -1,0 +1,51 @@
+#!/usr/bin/env janet
+# -*- mode: janet -*-
+
+(use cond)
+
+(def hidden
+  (table ;(mapcat |(tuple $ true)
+                  '("move-prover"
+                    "move-prover-boogie-backend"
+                    "move-stackless-bytecode"
+                    "mysten-metrics"
+                    "mysten-network"
+                    "mysten-util-mem"
+                    "prometheus-closure-metric"
+                    "shared-crypto"
+                    "sui-macros"
+                    "telemetry-subscribers"
+                    "typed-store"
+                    "sui-telemetry"
+                    "sui-tls"))))
+
+(def indices @{})
+
+(defn hide? [label] (in hidden label false))
+(defn keep? [index] (in indices index false))
+
+(def node
+  (peg/compile
+   '{:label (* `label = "` '(to `"`) `"`)
+     :shape (* ` shape = ` ':w+)
+     :style (* ` style = ` ':w+)
+     :main  (* :s* ':d+ " [ " :label (+ :shape :style " ") "]")}))
+
+(def edge (peg/compile '(* :s* ':d+ " -> " ':d+)))
+
+(loop [line :iterate (file/read stdin :line)]
+  (cond
+    (peg/match node line) => [node label shape/style]
+    (do (when (and (or (string/has-prefix? "move" label)
+                       (string/has-prefix? "sui" label)
+                       (= "box" shape/style))
+                   (not (string/has-prefix? "narwhal" label))
+                   (not (hide? label)))
+          (put indices node true))
+        (when (keep? node) (prin line)))
+
+    (peg/match edge line) => [from to]
+    (when (and (keep? from) (keep? to))
+      (prin line))
+
+    (prin line)))
