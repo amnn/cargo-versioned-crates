@@ -10,8 +10,11 @@ members = [
     "crates/layer-0",
     "crates/layer-1",
     "crates/layer-1-latest",
+    "crates/layer-1-v1",
     "crates/layer-1-0-latest",
+    "crates/layer-1-0-v1",
     "crates/layer-1-1-latest",
+    "crates/layer-1-1-v1",
     "crates/layer-2",
 ]
 

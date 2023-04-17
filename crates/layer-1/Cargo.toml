@@ -6,4 +6,5 @@ edition = "2021"
 [dependencies]
 ext-0.workspace = true
 layer-0.path = "../layer-0"
-layer-1-v1 = { path = "../layer-1-latest", package = "layer-1-latest" }
+layer-1-v1 = { path = "../layer-1-v1" }
+layer-1-v2 = { path = "../layer-1-latest", package = "layer-1-latest" }
